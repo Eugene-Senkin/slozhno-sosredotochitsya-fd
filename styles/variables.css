@@ -2,3 +2,16 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --background-img: url(../images/cover-image-dark.png);
+  --background-color: #000028;
+  --accent-color: #ff0070;
+  --accent-color-hover: #ff007066;
+  --title-font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --title-font-size-dectop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --title-font-color: #db00ff;
+  --description-font-size: 18px;
+  --main-title-font-size: #000028;
+  --classic-line-height: 23.4px;
+  --paragpaph-font-color: #f1b2ce;
+}
