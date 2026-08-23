@@ -14,4 +14,8 @@
   --main-title-font-size: #000028;
   --classic-line-height: 23.4px;
   --paragpaph-font-color: #f1b2ce;
+  --adaptive-margin: clamp(10px, 2.66vw, 20px);
+  --adaptive-REC-right-margin: clamp(19px, 5.06vw, 29px);
+  --adaptive-first-main-margin: clamp(40px, 10.66vw, 60px);
+  --adaptive-main-gap: clamp(50px, 13.33vw, 80px);
 }

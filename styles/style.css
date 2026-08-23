@@ -18,16 +18,10 @@
 }
 
 .header__theme-menu {
+  /* padding: 0 var(--adaptive-margin); */
   justify-self: flex-end;
   align-self: center;
-  /* margin-right: 10px; */
 }
-
-/* .header__theme-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
 
 .header__theme-menu-item {
   margin-top: 10px;
@@ -61,7 +55,7 @@
   color: var(--accent-color);
   font-size: var(--description-font-size);
   position: absolute;
-  inset: 10px 21px auto auto;
+  inset: var(--adaptive-margin) var(--adaptive-REC-right-margin) auto auto;
 }
 
 .decorative__rec::after {
@@ -86,7 +80,7 @@
   width: 25px;
   aspect-ratio: 1;
   position: absolute;
-  inset: 10px 10px auto auto;
+  inset: var(--adaptive-margin) var(--adaptive-margin) auto auto;
   /* background-color: chartreuse; */
   border-top: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
@@ -97,7 +91,7 @@
   width: 25px;
   aspect-ratio: 1;
   position: absolute;
-  inset: auto auto 10px 10px;
+  inset: auto auto var(--adaptive-margin) var(--adaptive-margin);
   /* мб прописать тут clamp чтобы меньше с media мучится */
   /* background-color: chartreuse; */
   border-left: 1px solid var(--accent-color);
@@ -113,7 +107,11 @@
 
 .title__description {
   align-self: center;
-  margin-bottom: 10px;
+  width: 50%;
+  min-width: 355px;
+  justify-self: end;
+  margin-bottom: var(--adaptive-margin);
+  /* margin: 0 var(--adaptive-margin) 10px; */
 }
 
 .title__decor {
@@ -152,23 +150,25 @@
 
 .main__section {
   display: grid;
-  row-gap: 50px;
-  padding: 40px clamp(10px, 2.66vw, 20px) 0;
+  gap: var(--adaptive-main-gap);
+  padding: clamp(40px, 10.66vw, 60px) clamp(10px, 2.66vw, 20px) 0;
+  /* не забудь в переменные закинуть */
 }
 
 .concenrtate {
   display: grid;
-  row-gap: 20px;
+  gap: 20px;
 }
 
 .article-item {
   display: grid;
-  row-gap: 10px;
+  align-content: start;
+  gap: 10px;
 }
 
 .image-concenrtate {
   display: grid;
-  row-gap: 10px;
+  gap: var(--adaptive-margin);
 }
 
 .concentrate-item {
@@ -199,8 +199,12 @@
   outline: 1px solid currentColor;
 }
 
+.concentrate-item {
+  object-fit: cover;
+}
+
 .footer {
-  margin-top: 40px;
+  margin-top: var(--adaptive-first-main-margin);
   display: grid;
   align-items: center;
   justify-items: center;
@@ -210,8 +214,125 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-@media (width >= 768px) {
+.blanket {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media (width >= 768px) {
+  h1.title {
+    margin-left: -20px;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  /*   .hard__concenrtate {
+    grid-template-columns: 1fr 2fr;
+    grid-auto-flow: dense;
+    grid-template-rows: [start] auto [end];
+  }
+
+  .hard__concenrtate > .article-item {
+    grid-column: 2;
+  }
+
+  .section-title-decor {
+    grid-row: 1/ -1;
+    grid-row: start / end;
+  } */
+
+  .hard__concenrtate,
+  .how__to-concenrtate {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .article-item {
+    /* margin-bottom: 20px; */
+  }
+
+  .section-title-decor {
+    grid-row: 1;
+  }
+
+  .lower__concenrtate {
+    grid-template-columns: 1fr;
+  }
+
+  .lower__concenrtate .section-title-decor {
+    grid-column: 1 / -1;
+    max-width: calc((100% - 2 * 20px) / 3);
+  }
+
+  .concentrate-item-sunst {
+    grid-area: sunset;
+  }
+
+  .concentrate-item-iscrm {
+    grid-area: icecream;
+  }
+
+  .concentrate-item-casset {
+    grid-area: casset;
+  }
+
+  .concentrate-item-book {
+    grid-area: books;
+  }
+
+  .concentrate-item-korean {
+    grid-area: korean;
+  }
+
+  .article-images {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "sunset  sunset  icecream"
+      "casset  books   icecream"
+      "casset  korean  korean";
+  }
+
+  .article-images img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 1; */
+    object-fit: cover; /* заполняет ячейку с обрезкой */
+    min-height: 0; /* позволяет сжиматься в grid */
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* пропиши мейну резиновый гап 50-80пх */
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: flex-start;
+  }
+
+  .header__theme-menu-list {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+  }
+
+  .header__theme-menu-list {
+    margin-top: 10px;
+  }
+
+  .concenrtate {
+    gap: 10px;
+  }
+
+  .lower__concenrtate {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
