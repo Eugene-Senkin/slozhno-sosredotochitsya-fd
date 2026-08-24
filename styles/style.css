@@ -1,8 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body.
-   Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--background-img);
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,11 +12,10 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  padding: 0 clamp(10px, 2.66vw, 20px);
+  padding: 0 var(--adaptive-margin);
 }
 
 .header__theme-menu {
-  /* padding: 0 var(--adaptive-margin); */
   justify-self: flex-end;
   align-self: center;
 }
@@ -83,7 +80,6 @@
   aspect-ratio: 1;
   position: absolute;
   inset: var(--adaptive-margin) var(--adaptive-margin) auto auto;
-  /* background-color: chartreuse; */
   border-top: 1px solid var(--decor-title-accent-color);
   border-right: 1px solid var(--decor-title-accent-color);
 }
@@ -94,8 +90,6 @@
   aspect-ratio: 1;
   position: absolute;
   inset: auto auto var(--adaptive-margin) var(--adaptive-margin);
-  /* мб прописать тут clamp чтобы меньше с media мучится */
-  /* background-color: chartreuse; */
   border-left: 1px solid var(--decor-title-accent-color);
   border-bottom: 1px solid var(--decor-title-accent-color);
 }
@@ -113,7 +107,6 @@
   min-width: 355px;
   justify-self: end;
   margin-bottom: var(--adaptive-margin);
-  /* margin: 0 var(--adaptive-margin) 10px; */
 }
 
 .title__decor {
@@ -132,23 +125,6 @@
 .advice {
   font-weight: 400;
 }
-
-/* .main__section > *:first-child {
-  margin-top: 40px;
-}
-
-.main__section > *:not(:first-child) {
-  margin-top: 50px;
-}
-
-.section-title-decor + .article__title-decor,
-.hard__concentrate-article + .article__title-decor {
-  margin-top: 20px;
-}
-
-.article__title-decor + .hard__concentrate-article {
-  margin-top: 10px;
-} */
 
 .main__section {
   display: grid;
@@ -177,7 +153,6 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  /* тут еще дохера перелопатить нужно буде, когда пойдем в адаптив */
 }
 
 .paragraph-decor {
@@ -231,28 +206,9 @@
     margin: 0;
   }
 
-  /*   .hard__concenrtate {
-    grid-template-columns: 1fr 2fr;
-    grid-auto-flow: dense;
-    grid-template-rows: [start] auto [end];
-  }
-
-  .hard__concenrtate > .article-item {
-    grid-column: 2;
-  }
-
-  .section-title-decor {
-    grid-row: 1/ -1;
-    grid-row: start / end;
-  } */
-
   .hard__concenrtate,
   .how__to-concenrtate {
     grid-template-columns: 1fr 2fr;
-  }
-
-  .article-item {
-    /* margin-bottom: 20px; */
   }
 
   .section-title-decor {
@@ -298,20 +254,16 @@
   }
 
   .article-images img {
-    display: block;
     width: 100%;
     height: 100%;
-    /* aspect-ratio: 1; */
-    object-fit: cover; /* заполняет ячейку с обрезкой */
-    min-height: 0; /* позволяет сжиматься в grid */
+    object-fit: cover;
+    min-height: 0;
   }
 
   .title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--title-font-size-descktop);
   }
 }
-
-/* пропиши мейну резиновый гап 50-80пх */
 
 @media (width >= 1024px) {
   .header__theme-menu {

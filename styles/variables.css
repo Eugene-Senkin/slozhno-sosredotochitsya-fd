@@ -18,7 +18,8 @@
   --paragpaph-font-color: #f1b2ce;
 
   --title-font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --title-font-size-dectop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --title-font-size-descktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+
   --adaptive-margin: clamp(10px, 2.66vw, 20px);
   --adaptive-REC-right-margin: clamp(19px, 5.06vw, 29px);
   --adaptive-first-main-margin: clamp(40px, 10.66vw, 60px);
