@@ -9,4 +9,37 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
+  --background-img: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
+
+  --accent-color: #ff8dcb;
+  --accent-color-hover: #32312d66;
+  --title-font-color: #ffc2e6;
+  --main-title-font-size: #353430;
+  --paragpaph-font-color: #353430;
+  --decor-title-accent-color: #353430;
+}
+
+.decorative__rec {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-img: url(../images/cover-image-light.png);
+    --background-color: #fff1f7;
+
+    --accent-color: #ff8dcb;
+    --accent-color-hover: #32312d66;
+    --title-font-color: #ffc2e6;
+    --main-title-font-size: #353430;
+    --paragpaph-font-color: #353430;
+    --decor-title-accent-color: #353430;
+    /* Дублируем только те же переменные, что и выше */
+  }
+  .decorative__rec {
+    display: none;
+  }
+  /* Остальные стили, только при необходимости */
 }
