@@ -1,1 +1,1 @@
-https://github.com/Eugene-Senkin/slozhno-sosredotochitsya-fd/tree/main
+https://github.com/Eugene-Senkin/slozhno-sosredotochitsya-fd
