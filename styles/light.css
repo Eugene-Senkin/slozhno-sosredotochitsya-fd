@@ -16,12 +16,12 @@
   --accent-color: #ff8dcb;
   --accent-color-hover: #32312d66;
   --title-font-color: #ffc2e6;
-  --main-title-font-size: #353430;
-  --paragpaph-font-color: #353430;
-  --decor-title-accent-color: #353430;
+  --on-accent-text-color: #353430;
+  --paragraph-font-color: #353430;
+  --decor-accent-color: #353430;
 }
 
-.decorative__rec {
+.theme-light .decorative__rec {
   display: none;
 }
 
@@ -33,12 +33,12 @@
     --accent-color: #ff8dcb;
     --accent-color-hover: #32312d66;
     --title-font-color: #ffc2e6;
-    --main-title-font-size: #353430;
-    --paragpaph-font-color: #353430;
-    --decor-title-accent-color: #353430;
+    --on-accent-text-color: #353430;
+    --paragraph-font-color: #353430;
+    --decor-accent-color: #353430;
     /* Дублируем только те же переменные, что и выше */
   }
-  .decorative__rec {
+  :root:not(.theme-dark) .decorative__rec {
     display: none;
   }
   /* Остальные стили, только при необходимости */

@@ -15,7 +15,7 @@
   --accent-color: #ff0070;
   --accent-color-hover: #ff007066;
   --title-font-color: #db00ff;
-  --main-title-font-size: #000028;
-  --paragpaph-font-color: #f1b2ce;
-  --decor-title-accent-color: #ff0070;
+  --on-accent-text-color: #000028;
+  --paragraph-font-color: #f1b2ce;
+  --decor-accent-color: #ff0070;
 }
