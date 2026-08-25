@@ -120,7 +120,7 @@
 .main__section {
   display: grid;
   gap: var(--section-gap);
-  padding: var(--adaptive-first-main-margin) var(--adaptive-margin) 0;
+  padding: var(--adaptive-top-margin) var(--adaptive-margin) 0;
 }
 
 .section-title-decor {
@@ -170,13 +170,13 @@
 }
 
 .concentrate-item {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 .footer {
-  margin-top: var(--adaptive-first-main-margin);
+  margin-top: var(--adaptive-top-margin);
   display: grid;
   align-items: center;
   justify-items: center;
@@ -202,8 +202,7 @@
     margin: 0;
   }
 
-  .hard__concentrate,
-  .how__to-concentrate {
+  .concentrate__sidebar {
     grid-template-columns: 1fr 2fr;
   }
 
